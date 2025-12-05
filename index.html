@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yin Li | Data Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0078D4; /* Azure Blue */
+            --dark: #333;
+            --light: #f4f4f4;
+            --text-grey: #666;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body { line-height: 1.6; color: var(--dark); }
+        
+        a { text-decoration: none; color: var(--primary); }
+        
+        /* Header / Hero */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0078D4 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 1.5rem; }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: opacity 0.3s;
+        }
+        .social-links a:hover { opacity: 0.7; }
+
+        /* Sections */
+        section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+        
+        h2 { 
+            font-size: 2rem; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid var(--primary); 
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-category {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .skill-category h3 { margin-bottom: 1rem; font-size: 1.1rem; }
+        .tags span {
+            display: inline-block;
+            background: #fff;
+            padding: 5px 10px;
+            margin: 2px;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Projects */
+        .project-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; }
+        .tech-stack { color: var(--primary); font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem; }
+        .project-links a { margin-left: 15px; color: var(--text-grey); }
+        .project-links a:hover { color: var(--primary); }
+
+        /* Experience Timeline */
+        .timeline-item {
+            border-left: 3px solid var(--primary);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            position: absolute;
+            left: -7.5px;
+            top: 5px;
+            border-radius: 50%;
+        }
+        .date { color: var(--text-grey); font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Yin Li</h1>
+        <p>Azure-Focused Integration & Data Engineer</p>
+        <div class="social-links">
+            <a href="https://github.com/yinli113" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="mailto:yin.li.aus@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            [cite_start]I am a Data Engineer with over 10 years of experience in analytics and healthcare research, now specializing in advanced cloud data engineering[cite: 5]. 
+            I blend deep domain knowledge with cutting-edge cloud platforms (Azure, Databricks, AWS) to deliver secure, scalable, and efficient data solutions. 
+            [cite_start]My expertise lies in designing event-driven architectures, optimizing ETL pipelines, and bridging technical execution with business outcomes[cite: 6, 8, 9].
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Cloud & Architecture</h3>
+                <div class="tags">
+                    <span>Azure Data Factory</span>
+                    <span>Databricks</span>
+                    <span>AWS</span>
+                    <span>Delta Lakehouse</span>
+                    <span>Event-Driven Architecture</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Data Engineering</h3>
+                <div class="tags">
+                    <span>PySpark</span>
+                    <span>SQL</span>
+                    <span>ETL/ELT</span>
+                    <span>Apache Airflow</span>
+                    <span>Kafka/Event Hubs</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>DevOps & Tools</h3>
+                <div class="tags">
+                    <span>CI/CD Pipelines</span>
+                    <span>Git/GitHub</span>
+                    <span>Docker</span>
+                    <span>Power BI</span>
+                    <span>Tableau</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Victoria Road Crash Lakehouse</h3>
+                <div class="project-links">
+                    <a href="https://github.com/yinli113/victoria-road-crash-lakehouse" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+            <div class="tech-stack">Databricks | PySpark | Delta Lake | Power BI</div>
+            <ul>
+                [cite_start]<li>Designed and deployed a Databricks pipeline for Victoria traffic data, implementing Delta Lakehouse architecture[cite: 15].</li>
+                [cite_start]<li>Improved data refresh speeds by <strong>25%</strong> and enabled real-time visualization in Power BI[cite: 16].</li>
+                <li>Optimized transformation logic to handle high-volume data ingestion efficiently.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>AI-Powered Medical Assistant</h3>
+                <div class="project-links">
+                    <a href="https://github.com/yinli113" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+            <div class="tech-stack">Python | Streamlit | Gemini API | SQL</div>
+            <ul>
+                [cite_start]<li>Built a modular AI assistant integrating Streamlit and Gemini API for real-time patient query interpretation[cite: 13, 36].</li>
+                [cite_start]<li>Reduced data storage usage by <strong>70%</strong> through schema pruning and dimensional star schema optimization[cite: 14, 39].</li>
+                <li>Delivered a secure, HIPAA-compliant backend structure for healthcare data queries.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Cloud-Based ETL & Data Warehouse</h3>
+            </div>
+            <div class="tech-stack">Azure Data Factory | SQL | Apache Airflow</div>
+            <ul>
+                [cite_start]<li>Engineered a cloud warehouse solution using Azure Data Factory and SQL with standardized star schema design[cite: 19, 20].</li>
+                [cite_start]<li>Improved report generation speed by <strong>40%</strong> and supported ML-ready datasets[cite: 20].</li>
+                [cite_start]<li>Orchestrated workflows in Apache Airflow, reducing manual scheduling by 90%[cite: 17, 18].</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        
+        <div class="timeline-item">
+            <h3>Azure Integration & Data Engineering Intern</h3>
+            <p class="date">Oeson Learning | Apr 2025 – Jul 2025</p>
+            <p>Built modern integration pipelines and scalable healthcare data solutions. [cite_start]Reduced storage by 70% and improved query speeds by 30% via PySpark optimizations[cite: 31, 39].</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Data Analyst Intern</h3>
+            <p class="date">Ededge Groups™ | Jan 2025 – Apr 2025</p>
+            <p>Streamlined SQL and Python workflows for reporting, cutting manual effort by 25%. [cite_start]Developed automated Power BI dashboards[cite: 41, 43].</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Clinical Data Analyst / Research Pharmacist</h3>
+            <p class="date">LiuZhou TCM Hospital | 2000 – 2013</p>
+            <p>Led cross-functional pharmaceutical research and published 10+ peer-reviewed studies. [cite_start]Implemented systems reducing antibiotic resistance by 30%[cite: 45, 47, 48].</p>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            [cite_start]<li><strong>Microsoft Certified:</strong> Azure Data Engineer Associate [cite: 54]</li>
+            [cite_start]<li><strong>Databricks Certified:</strong> Data Engineer Associate [cite: 55]</li>
+            [cite_start]<li><strong>AWS Certified:</strong> Cloud Practitioner [cite: 56]</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Yin Li. Built with GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
