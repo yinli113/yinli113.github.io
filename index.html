@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yin Li | Data Engineer</title>
+    <title>Yin Li | Senior Azure Data Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -139,7 +139,7 @@
 
     <header>
         <h1>Yin Li</h1>
-        <p>Gen AI & Data Engineer</p>
+        <p>Senior/Lead Azure Data Engineer | Lakehouse Architecture</p>
         <div class="social-links">
             <a href="https://github.com/yinli113" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/yin-li-au/" target="_blank"><i class="fab fa-linkedin"></i></a> 
@@ -150,9 +150,7 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            I am a Data Engineer with over 10 years of experience in analytics and healthcare research, now specializing in advanced cloud data engineering. 
-            I blend deep domain knowledge with cutting-edge cloud platforms (Azure, Databricks, AWS) to deliver secure, scalable, and efficient data solutions. 
-            My expertise lies in designing event-driven architectures, optimizing ETL pipelines, and bridging technical execution with business outcomes.
+            I am a Senior Azure Data Engineer with over 10 years of experience across engineering, analytics, and regulated healthcare domains. Extensive hands-on delivery building end-to-end Lakehouse architectures on Azure (Databricks, ADF, Synapse, ADLS, Azure SQL). Proven ability to lead platforms from discovery, design, build to deployment within Agile delivery environments. Strong foundation in advanced SQL scripting, Python automation, and CI/CD pipelines. I am passionate about GenAI-enabled delivery and establishing robust data governance, security, and best practices.
         </p>
     </section>
 
@@ -163,30 +161,30 @@
                 <h3>Cloud & Architecture</h3>
                 <div class="tags">
                     <span>Azure Data Factory</span>
-                    <span>Databricks</span>
-                    <span>AWS</span>
-                    <span>Delta Lakehouse</span>
-                    <span>Event-Driven Architecture</span>
+                    <span>Azure Databricks</span>
+                    <span>Azure Synapse</span>
+                    <span>Lakehouse Architecture</span>
+                    <span>Medallion Pattern</span>
                 </div>
             </div>
             <div class="skill-category">
                 <h3>Data Engineering</h3>
                 <div class="tags">
                     <span>PySpark</span>
+                    <span>Delta Lake</span>
                     <span>SQL</span>
-                    <span>ETL/ELT</span>
-                    <span>Apache Airflow</span>
-                    <span>Inventory Optimization</span>
+                    <span>Python</span>
+                    <span>Kafka</span>
                 </div>
             </div>
             <div class="skill-category">
                 <h3>DevOps & Tools</h3>
                 <div class="tags">
-                    <span>CI/CD Pipelines</span>
-                    <span>Git/GitHub</span>
+                    <span>Azure DevOps</span>
+                    <span>GitHub Actions</span>
+                    <span>dbt</span>
                     <span>Docker</span>
                     <span>Power BI</span>
-                    <span>Tableau</span>
                 </div>
             </div>
         </div>
@@ -197,46 +195,69 @@
 
         <div class="project-card">
             <div class="project-header">
-                <h3>Victoria Road Crash Lakehouse</h3>
+                <h3>Victoria Road Safety Lakehouse</h3>
                 <div class="project-links">
                     <a href="https://github.com/yinli113/victoria-road-crash-lakehouse" target="_blank"><i class="fab fa-github"></i> Code</a>
                 </div>
             </div>
-            <div class="tech-stack">Databricks | PySpark | Delta Lake | Power BI</div>
+            <div class="tech-stack">Azure Databricks | Delta Lake | dbt | Azure DevOps | Power BI</div>
             <ul>
-                <li>Designed and deployed a Databricks pipeline for Victoria traffic data, implementing Delta Lakehouse architecture.</li>
-                <li>Improved data refresh speeds by <strong>25%</strong> and enabled real-time visualization in Power BI.</li>
-                <li>Optimized transformation logic to handle high-volume data ingestion efficiently.</li>
+                <li>Built a Medallion Architecture (Bronze/Silver/Gold) on Databricks leveraging notebooks and Spark to process Victoria traffic data.</li>
+                <li>Implemented CI/CD workflows for job orchestration and quality checks, ensuring data governance and best practices.</li>
             </ul>
         </div>
 
         <div class="project-card">
             <div class="project-header">
-                <h3>AI-Powered Medical Assistant</h3>
+                <h3>Kafka Streaming Analytics (TrafficPulse)</h3>
+                <div class="project-links">
+                    <a href="https://github.com/yinli113/traffic_kafka" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+            <div class="tech-stack">Docker | Kafka/Redpanda | Databricks Delta Lake | Python</div>
+            <ul>
+                <li>Containerised Kafka broker and built Python producer/consumer pipelines for data processing and automation.</li>
+                <li>Implemented Databricks Delta streaming tables and job orchestration for near-real-time analytics dashboards.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Azure Data Factory Pipeline (NYC Taxi)</h3>
+                <div class="project-links">
+                    <a href="https://github.com/yinli113/azure_data_factory_NYC_taxi" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+            <div class="tech-stack">Azure Data Factory | Azure SQL | ADLS Gen2</div>
+            <ul>
+                <li>Built Azure Data Factory pipelines, triggers, and integration runtimes using metadata, foreach, and copy patterns.</li>
+                <li>Loaded curated data into Azure SQL utilizing strong SQL scripting for downstream Power BI dataset optimisation.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Azure Synapse Serverless ELT</h3>
+                <div class="project-links">
+                    <a href="https://github.com/yinli113/azure_synapse_taxi_project" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+            <div class="tech-stack">Azure Synapse | Serverless SQL | ADLS Gen2</div>
+            <ul>
+                <li>Implemented serverless SQL pool modelling, partitioning, and format practices for query performance optimisation.</li>
+            </ul>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-header">
+                <h3>AI Healthcare Assistant</h3>
                 <div class="project-links">
                     <a href="https://github.com/yinli113/ai-healthcare-assistant" target="_blank"><i class="fab fa-github"></i> Code</a>
                 </div>
             </div>
-            <div class="tech-stack">Python | Streamlit | Gemini API | SQL</div>
+            <div class="tech-stack">Python | Streamlit | LLM (Gemini)</div>
             <ul>
-                <li>Built a modular AI assistant integrating Streamlit and Gemini API for real-time patient query interpretation.</li>
-                <li>Reduced data storage usage by <strong>70%</strong> through schema pruning and dimensional star schema optimization.</li>
-                <li>Delivered a secure, HIPAA-compliant backend structure for healthcare data queries.</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <div class="project-header">
-                <h3>AWS Fitness Data Pipeline</h3>
-                <div class="project-links">
-                    <a href="https://github.com/yinli113/aws-fitness-pipeline" target="_blank"><i class="fab fa-github"></i> Code</a>
-                </div>
-            </div>
-            <div class="tech-stack">AWS Glue | Redshift | S3 | Python</div>
-            <ul>
-                <li>Engineered a serverless ETL pipeline processing fitness tracker data via AWS Glue and Lambda.</li>
-                <li>Implemented event-driven architecture with EventBridge for real-time data ingestion.</li>
-                <li>Designed a scalable data warehouse in Redshift for high-performance health analytics.</li>
+                <li>Built a modular prompt workflow to translate natural language symptoms into structured triage output.</li>
             </ul>
         </div>
     </section>
@@ -248,27 +269,39 @@
             <div class="role-title">Independent Data Engineer & Consultant</div>
             <div class="company">Melbourne, VIC | Jan 2024 – Present</div>
             <ul>
-                <li>Architecting and deploying AI-integrated data pipelines for varied use cases using Databricks and Azure.</li>
-                <li>Integrated GitHub MCP to automate git workflows (commit, push, pull), streamlining version control for development teams.</li>
-                <li>Optimized SQL pipelines for e-commerce datasets, reducing dataset size by 86% to improve Power BI dashboard performance.</li>
+                <li>Delivered orchestration patterns using Azure Data Factory to ingest from SQL Server and on-prem sources into ADLS Gen2.</li>
+                <li>Built Lakehouse layers (Bronze/Silver/Gold) using Azure Databricks (Spark, Delta Lake); handled job orchestration and Python data processing.</li>
+                <li>Applied strong SQL scripting to optimise data models across Azure SQL databases.</li>
+                <li>Implemented data governance and security best practices, automating deploy/test workflows via Azure DevOps and GitHub Actions.</li>
             </ul>
         </div>
 
         <div class="timeline-item">
-            <div class="role-title">Data Engineer (Contract/Intern)</div>
+            <div class="role-title">Data Analyst / Data Engineer (Freelance)</div>
+            <div class="company">Whitsun Commercial Building Maintenance | Jan 2023 – Present</div>
+            <ul>
+                <li>Migrated legacy on-premise Excel accounting processes into an Azure Databricks Lakehouse, defining relational core tables.</li>
+                <li>Utilised Databricks Autoloader to ingest disparate data into a unified, governed Delta Lake and calculated historical benchmarks.</li>
+                <li>Built real-time variance Databricks SQL dashboards comparing site spending against benchmarks with automated alerts.</li>
+                <li>Trained Python-based predictive ML models in Databricks to forecast material price fluctuations for data-backed bidding.</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="role-title">Data Engineer (Contract)</div>
             <div class="company">Oeson Learning (Remote) | Apr 2025 – Jul 2025</div>
             <ul>
-                <li>Developed AI-powered PySpark ETL pipelines, resulting in a 30% improvement in data processing speeds.</li>
-                <li>Designed robust schema validation frameworks specifically for healthcare datasets, ensuring strict data quality standards.</li>
+                <li>Optimized Databricks Spark jobs for high-volume datasets, achieving a 30% reduction in processing time.</li>
+                <li>Implemented robust schema validation and data governance best practices using Great Expectations within Databricks notebooks.</li>
             </ul>
         </div>
 
         <div class="timeline-item">
-            <div class="role-title">Data Analyst (Contract/Intern)</div>
+            <div class="role-title">Data Analyst (Contract)</div>
             <div class="company">Ededge Groups™ (Remote) | Jan 2025 – Apr 2025</div>
             <ul>
-                <li>Automated reporting workflows using SQL and Tableau, reducing manual reporting time by 25%.</li>
-                <li>Collaborated with stakeholders to translate business requirements into actionable data visualizations.</li>
+                <li>Automated SQL execution workflows and Python automation scripts, reducing manual reporting overhead by 25%.</li>
+                <li>Designed interactive dashboards, applying Power BI data modelling and DAX basics to provide executive stakeholder insights.</li>
             </ul>
         </div>
 
@@ -276,19 +309,17 @@
             <div class="role-title">Data Analyst (Part-time)</div>
             <div class="company">Foodland | Jan 2023 – Jun 2023</div>
             <ul>
-                <li><strong>Inventory & Supply Chain Optimisation:</strong> Forecasted demand for perishable and non-perishable goods.</li>
-                <li>Predicted spoilage risk to reduce overstock and shrinkage.</li>
-                <li>Built reorder recommendations based on lead times, supplier reliability, and minimum stock levels.</li>
-                <li>Analysed stock-out events and revenue loss risks.</li>
+                <li>Analyzed inventory turnover and spoilage rates using SQL, directly influencing reordering logic to reduce waste.</li>
+                <li>Built demand forecasting models to optimize stock levels for perishable goods.</li>
             </ul>
         </div>
 
         <div class="timeline-item">
-            <div class="role-title">Registered Myotherapist & Healthcare Practitioner</div>
+            <div class="role-title">Healthcare Practitioner (Private Practice)</div>
             <div class="company">Melbourne, VIC | 2013 – 2022</div>
             <ul>
-                <li>Managed a private clinical practice, responsible for sensitive patient health records and strict adherence to privacy compliance regulations.</li>
-                <li>Demonstrated strong soft skills in client communication, problem-solving, and operational management while maintaining a stable, long-term practice.</li>
+                <li>Operated in privacy-sensitive environments with strong client communication and ethics mindset, ensuring strict data privacy.</li>
+                <li>Built long-term relationships through structured problem-solving and operational management.</li>
             </ul>
         </div>
 
@@ -296,9 +327,9 @@
             <div class="role-title">Clinical Data Analyst / Research Pharmacist</div>
             <div class="company">LiuZhou TCM Hospital | Jul 2000 – Jan 2013</div>
             <ul>
-                <li><strong>Leadership:</strong> Led analytics and clinical research teams, overseeing data collection and analysis for hospital-wide studies.</li>
-                <li><strong>Impact:</strong> Built drug monitoring systems that utilized data trends to reduce antibiotic resistance by 30%.</li>
-                <li><strong>Research:</strong> Published 10+ studies based on rigorous statistical analysis of clinical data.</li>
+                <li>Led cross-functional teams in collecting, cleaning, and analyzing large-scale clinical datasets.</li>
+                <li>Developed data-driven drug monitoring systems that reduced antibiotic resistance rates by 30%.</li>
+                <li>Conducted rigorous statistical modeling for 10+ peer-reviewed publications.</li>
             </ul>
         </div>
     </section>
@@ -306,18 +337,19 @@
     <section id="education">
         <h2>Certifications & Education</h2>
         <ul class="cert-list">
-            <li><strong>Google Cloud Certified:</strong> Generative AI Leader</li>
-            <li><strong>Databricks Certified:</strong> Generative AI Engineer Associate</li>
             <li><strong>Microsoft Certified:</strong> Azure Data Engineer Associate</li>
             <li><strong>Databricks Certified:</strong> Data Engineer Associate</li>
+            <li><strong>Google Cloud Certified:</strong> Generative AI Leader</li>
+            <li><strong>Databricks Certified:</strong> Generative AI Engineer</li>
             <li><strong>AWS Certified:</strong> Cloud Practitioner</li>
             <li><strong>Data Engineering Nanodegree</strong>, RMIT · Udacity <span class="cert-year">(2023)</span></li>
             <li><strong>Graduate Certificate in Data Science</strong>, The University of Adelaide College <span class="cert-year">(2022)</span></li>
+            <li><strong>Bachelor of Pharmacy</strong>, Guangxi University of Chinese Medicine <span class="cert-year">(2000)</span></li>
         </ul>
     </section>
 
     <footer>
-        <p>&copy; 2025 Yin Li. Built with GitHub Pages.</p>
+        <p>&copy; 2026 Yin Li. Built with GitHub Pages.</p>
     </footer>
 
 </body>
