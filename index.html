@@ -5,145 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yin Li | Senior Azure Data Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         :root {
             --primary: #0078D4; /* Azure Blue */
             --dark: #333;
             --light: #f4f4f4;
             --text-grey: #666;
+            --databricks: #FF3621;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
-        body { line-height: 1.6; color: var(--dark); }
+        body { line-height: 1.6; color: var(--dark); background-color: #fafafa; }
         
         a { text-decoration: none; color: var(--primary); }
         
         /* Header / Hero */
         header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0078D4 100%);
+            background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(0,120,212,0.9) 100%), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop') center/cover fixed;
             color: white;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem 5rem;
             text-align: center;
+            position: relative;
         }
         
-        header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-        header p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 1.5rem; }
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header h1 { font-size: 3.5rem; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        header p { font-size: 1.3rem; opacity: 0.95; margin-bottom: 2rem; font-weight: 300; }
         
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-badges img {
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .hero-badges img:hover { transform: translateY(-3px); }
+
         .social-links a {
             color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: opacity 0.3s;
+            font-size: 1.8rem;
+            margin: 0 12px;
+            transition: color 0.3s, transform 0.2s;
+            display: inline-block;
         }
-        .social-links a:hover { opacity: 0.7; }
+        .social-links a:hover { color: #ddd; transform: scale(1.1); }
 
         /* Sections */
         section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
         
         h2 { 
-            font-size: 2rem; 
-            margin-bottom: 2rem; 
-            border-bottom: 2px solid var(--primary); 
+            font-size: 2.2rem; 
+            margin-bottom: 2.5rem; 
+            border-bottom: 3px solid var(--primary); 
             display: inline-block;
             padding-bottom: 5px;
+            color: var(--dark);
+        }
+
+        /* About */
+        #about p {
+            font-size: 1.1rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border-left: 4px solid var(--primary);
         }
 
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         .skill-category {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 8px;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary);
         }
-        .skill-category h3 { margin-bottom: 1rem; font-size: 1.1rem; }
+        .skill-category:nth-child(2) { border-top-color: var(--databricks); }
+        .skill-category:nth-child(3) { border-top-color: #8A2BE2; }
+
+        .skill-category h3 { margin-bottom: 1.5rem; font-size: 1.3rem; color: var(--dark); }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .tags span {
-            display: inline-block;
-            background: #fff;
-            padding: 5px 10px;
-            margin: 2px;
-            font-size: 0.9rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--light);
+            padding: 8px 12px;
+            font-size: 0.95rem;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            font-weight: 500;
+            color: var(--dark);
         }
 
         /* Projects */
         .project-card {
             background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .project-card:hover { transform: translateY(-5px); }
+        .project-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-color: #ddd;
+        }
         .project-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; }
-        .tech-stack { color: var(--primary); font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem; }
-        .project-links a { margin-left: 15px; color: var(--text-grey); }
-        .project-links a:hover { color: var(--primary); }
+        .project-header h3 { font-size: 1.4rem; color: var(--dark); }
+        .tech-stack-badges { margin-bottom: 1.5rem; display: flex; gap: 6px; flex-wrap: wrap; }
+        .project-links a { 
+            background: var(--light);
+            padding: 8px 15px;
+            border-radius: 6px;
+            color: var(--dark);
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .project-links a:hover { background: #e0e0e0; color: var(--primary); }
+        .project-card ul { margin-left: 1.2rem; color: var(--text-grey); }
+        .project-card li { margin-bottom: 0.5rem; }
 
         /* Experience Timeline */
         .timeline-item {
             border-left: 3px solid var(--primary);
-            padding-left: 1.5rem;
-            margin-bottom: 2rem;
+            padding-left: 2rem;
+            margin-bottom: 3rem;
             position: relative;
         }
         .timeline-item::before {
             content: '';
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 3px solid var(--primary);
             position: absolute;
-            left: -7.5px;
+            left: -10.5px;
             top: 5px;
             border-radius: 50%;
         }
-        .date { color: var(--text-grey); font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 600; }
-        .role-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.2rem; }
-        .company { font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; }
-        .timeline-item ul { margin-left: 1.2rem; margin-top: 0.5rem; }
-        .timeline-item li { margin-bottom: 0.3rem; }
+        .date { color: var(--primary); font-size: 0.95rem; margin-bottom: 0.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .role-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem; color: var(--dark); }
+        .company { font-weight: 600; color: var(--text-grey); margin-bottom: 1rem; font-size: 1.1rem; }
+        .timeline-item ul { margin-left: 1.2rem; margin-top: 0.5rem; color: #555; }
+        .timeline-item li { margin-bottom: 0.5rem; }
 
-        /* Certifications List */
-        .cert-list {
-            list-style: none;
+        /* Certifications Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
-        .cert-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+        .cert-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
         }
-        .cert-list li:last-child { border-bottom: none; }
-        .cert-year { color: var(--text-grey); font-size: 0.9rem; margin-left: 10px; }
+        .cert-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.05); }
+        .cert-icon {
+            font-size: 2.5rem;
+            margin-right: 1.5rem;
+            width: 50px;
+            text-align: center;
+        }
+        .cert-icon.databricks { color: var(--databricks); }
+        .cert-icon.azure { color: var(--primary); }
+        .cert-icon.ai { color: #8A2BE2; }
+        .cert-icon.aws { color: #FF9900; }
+        .cert-icon.edu { color: #4CAF50; }
+        
+        .cert-info h4 { font-size: 1rem; color: var(--dark); margin-bottom: 0.2rem; }
+        .cert-info p { font-size: 0.9rem; color: var(--text-grey); }
+        .cert-year { display: inline-block; background: var(--light); padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; margin-top: 5px; }
 
         /* Footer */
         footer {
             background: #1a1a1a;
-            color: white;
+            color: #aaa;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             margin-top: 4rem;
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
+            header h1 { font-size: 2.5rem; }
+            .project-header { flex-direction: column; gap: 1rem; }
+            .cert-card { flex-direction: column; text-align: center; }
+            .cert-icon { margin-right: 0; margin-bottom: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Yin Li</h1>
-        <p>Senior Azure Data Engineer | Lakehouse Architecture</p>
-        <div class="social-links">
-            <a href="https://github.com/yinli113" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/yin-li-au/" target="_blank"><i class="fab fa-linkedin"></i></a> 
-            <a href="mailto:yin.li.aus@gmail.com"><i class="fas fa-envelope"></i></a>
+        <div class="header-content">
+            <h1>Yin Li</h1>
+            <p>Senior/Lead Azure Data Engineer | Lakehouse Architecture</p>
+            
+            <div class="hero-badges">
+                <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white" alt="Databricks">
+                <img src="https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure">
+                <img src="https://img.shields.io/badge/Gen_AI-8A2BE2?style=for-the-badge&logo=openai&logoColor=white" alt="Gen AI">
+                <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" alt="PySpark">
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/yinli113" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/yin-li-au/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a> 
+                <a href="mailto:yin.li.aus@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </header>
 
@@ -158,33 +254,33 @@
         <h2>Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>Cloud & Architecture</h3>
+                <h3><i class="devicon-azure-plain colored"></i> Cloud & Architecture</h3>
                 <div class="tags">
-                    <span>Azure Data Factory</span>
-                    <span>Azure Databricks</span>
-                    <span>Azure Synapse</span>
-                    <span>Lakehouse Architecture</span>
-                    <span>Medallion Pattern</span>
+                    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" width="16" /> Azure Data Factory</span>
+                    <span><img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" width="16" /> Azure Databricks</span>
+                    <span><i class="fas fa-database" style="color:#0078D4"></i> Azure Synapse</span>
+                    <span><i class="fas fa-water" style="color:#00A8E1"></i> Lakehouse Architecture</span>
+                    <span><i class="fas fa-layer-group" style="color:#FF3621"></i> Medallion Pattern</span>
                 </div>
             </div>
             <div class="skill-category">
-                <h3>Data Engineering</h3>
+                <h3><i class="fas fa-code"></i> Data Engineering</h3>
                 <div class="tags">
-                    <span>PySpark</span>
-                    <span>Delta Lake</span>
-                    <span>SQL</span>
-                    <span>Python</span>
-                    <span>Kafka</span>
+                    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" width="16" /> PySpark</span>
+                    <span><i class="fas fa-table" style="color:#00A8E1"></i> Delta Lake</span>
+                    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" width="16" /> SQL</span>
+                    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="16" /> Python</span>
+                    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" width="16" /> Kafka</span>
                 </div>
             </div>
             <div class="skill-category">
-                <h3>DevOps & Tools</h3>
+                <h3><i class="fas fa-tools"></i> DevOps & Tools</h3>
                 <div class="tags">
-                    <span>Azure DevOps</span>
-                    <span>GitHub Actions</span>
-                    <span>dbt</span>
-                    <span>Docker</span>
-                    <span>Power BI</span>
+                    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" width="16" /> Azure DevOps</span>
+                    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" width="16" /> GitHub Actions</span>
+                    <span><i class="fas fa-project-diagram" style="color:#FF694B"></i> dbt</span>
+                    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" width="16" /> Docker</span>
+                    <span><i class="fas fa-chart-bar" style="color:#F2C811"></i> Power BI</span>
                 </div>
             </div>
         </div>
@@ -197,10 +293,15 @@
             <div class="project-header">
                 <h3>Victoria Road Safety Lakehouse</h3>
                 <div class="project-links">
-                    <a href="https://github.com/yinli113/victoria-road-crash-lakehouse" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/yinli113/victoria-road-crash-lakehouse" target="_blank"><i class="fab fa-github"></i> View Code</a>
                 </div>
             </div>
-            <div class="tech-stack">Azure Databricks | Delta Lake | dbt | Azure DevOps | Power BI</div>
+            <div class="tech-stack-badges">
+                <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white">
+                <img src="https://img.shields.io/badge/Delta_Lake-00A8E1?style=flat-square&logo=databricks&logoColor=white">
+                <img src="https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white">
+                <img src="https://img.shields.io/badge/Azure_DevOps-0080C1?style=flat-square&logo=azuredevops&logoColor=white">
+            </div>
             <ul>
                 <li>Built a Medallion Architecture (Bronze/Silver/Gold) on Databricks leveraging notebooks and Spark to process Victoria traffic data.</li>
                 <li>Implemented CI/CD workflows for job orchestration and quality checks, ensuring data governance and best practices.</li>
@@ -211,10 +312,15 @@
             <div class="project-header">
                 <h3>Kafka Streaming Analytics (TrafficPulse)</h3>
                 <div class="project-links">
-                    <a href="https://github.com/yinli113/traffic_kafka" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/yinli113/traffic_kafka" target="_blank"><i class="fab fa-github"></i> View Code</a>
                 </div>
             </div>
-            <div class="tech-stack">Docker | Kafka/Redpanda | Databricks Delta Lake | Python</div>
+            <div class="tech-stack-badges">
+                <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white">
+                <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white">
+                <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
+            </div>
             <ul>
                 <li>Containerised Kafka broker and built Python producer/consumer pipelines for data processing and automation.</li>
                 <li>Implemented Databricks Delta streaming tables and job orchestration for near-real-time analytics dashboards.</li>
@@ -225,10 +331,13 @@
             <div class="project-header">
                 <h3>Azure Data Factory Pipeline (NYC Taxi)</h3>
                 <div class="project-links">
-                    <a href="https://github.com/yinli113/azure_data_factory_NYC_taxi" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/yinli113/azure_data_factory_NYC_taxi" target="_blank"><i class="fab fa-github"></i> View Code</a>
                 </div>
             </div>
-            <div class="tech-stack">Azure Data Factory | Azure SQL | ADLS Gen2</div>
+            <div class="tech-stack-badges">
+                <img src="https://img.shields.io/badge/Azure_Data_Factory-0089D6?style=flat-square&logo=microsoftazure&logoColor=white">
+                <img src="https://img.shields.io/badge/Azure_SQL-00BCF2?style=flat-square&logo=microsoftazure&logoColor=white">
+            </div>
             <ul>
                 <li>Built Azure Data Factory pipelines, triggers, and integration runtimes using metadata, foreach, and copy patterns.</li>
                 <li>Loaded curated data into Azure SQL utilizing strong SQL scripting for downstream Power BI dataset optimisation.</li>
@@ -239,10 +348,13 @@
             <div class="project-header">
                 <h3>Azure Synapse Serverless ELT</h3>
                 <div class="project-links">
-                    <a href="https://github.com/yinli113/azure_synapse_taxi_project" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/yinli113/azure_synapse_taxi_project" target="_blank"><i class="fab fa-github"></i> View Code</a>
                 </div>
             </div>
-            <div class="tech-stack">Azure Synapse | Serverless SQL | ADLS Gen2</div>
+            <div class="tech-stack-badges">
+                <img src="https://img.shields.io/badge/Azure_Synapse-0089D6?style=flat-square&logo=microsoftazure&logoColor=white">
+                <img src="https://img.shields.io/badge/Serverless_SQL-00BCF2?style=flat-square&logo=microsoftazure&logoColor=white">
+            </div>
             <ul>
                 <li>Implemented serverless SQL pool modelling, partitioning, and format practices for query performance optimisation.</li>
             </ul>
@@ -252,12 +364,16 @@
             <div class="project-header">
                 <h3>AI Healthcare Assistant</h3>
                 <div class="project-links">
-                    <a href="https://github.com/yinli113/ai-healthcare-assistant" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/yinli113/ai-healthcare-assistant" target="_blank"><i class="fab fa-github"></i> View Code</a>
                 </div>
             </div>
-            <div class="tech-stack">Python | Streamlit | LLM (Gemini)</div>
+            <div class="tech-stack-badges">
+                <img src="https://img.shields.io/badge/Gen_AI-8A2BE2?style=flat-square&logo=openai&logoColor=white">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
+                <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
+            </div>
             <ul>
-                <li>Built a modular prompt workflow to translate natural language symptoms into structured triage output.</li>
+                <li>Built a modular prompt workflow using Google Gemini API to translate natural language symptoms into structured triage output.</li>
             </ul>
         </div>
     </section>
@@ -266,8 +382,9 @@
         <h2>Professional Experience</h2>
         
         <div class="timeline-item">
+            <div class="date">Jan 2024 – Present</div>
             <div class="role-title">Independent Data Engineer & Consultant</div>
-            <div class="company">Melbourne, VIC | Jan 2024 – Present</div>
+            <div class="company">Melbourne, VIC</div>
             <ul>
                 <li>Delivered orchestration patterns using Azure Data Factory to ingest from SQL Server and on-prem sources into ADLS Gen2.</li>
                 <li>Built Lakehouse layers (Bronze/Silver/Gold) using Azure Databricks (Spark, Delta Lake); handled job orchestration and Python data processing.</li>
@@ -277,8 +394,9 @@
         </div>
 
         <div class="timeline-item">
+            <div class="date">Jan 2023 – Present</div>
             <div class="role-title">Data Analyst / Data Engineer (Freelance)</div>
-            <div class="company">Melbourne-based commercial construction company | Jan 2023 – Present</div>
+            <div class="company">Melbourne-based commercial construction company</div>
             <ul>
                 <li>Recently supported a Melbourne-based commercial construction company in consolidating more than 25 years of operational data into an Azure Data Lake environment.</li>
                 <li>Designed datasets and analytical models to track material and labour expenditure across projects, enabling historical cost benchmarking and improved project cost visibility.</li>
@@ -290,8 +408,9 @@
         </div>
 
         <div class="timeline-item">
+            <div class="date">Apr 2025 – Jul 2025</div>
             <div class="role-title">Data Engineer (Contract)</div>
-            <div class="company">Oeson Learning (Remote) | Apr 2025 – Jul 2025</div>
+            <div class="company">Oeson Learning (Remote)</div>
             <ul>
                 <li>Optimized Databricks Spark jobs for high-volume datasets, achieving a 30% reduction in processing time.</li>
                 <li>Implemented robust schema validation and data governance best practices using Great Expectations within Databricks notebooks.</li>
@@ -299,8 +418,9 @@
         </div>
 
         <div class="timeline-item">
+            <div class="date">Jan 2025 – Apr 2025</div>
             <div class="role-title">Data Analyst (Contract)</div>
-            <div class="company">Ededge Groups™ (Remote) | Jan 2025 – Apr 2025</div>
+            <div class="company">Ededge Groups™ (Remote)</div>
             <ul>
                 <li>Automated SQL execution workflows and Python automation scripts, reducing manual reporting overhead by 25%.</li>
                 <li>Designed interactive dashboards, applying Power BI data modelling and DAX basics to provide executive stakeholder insights.</li>
@@ -308,8 +428,9 @@
         </div>
 
         <div class="timeline-item">
+            <div class="date">Jan 2023 – Jun 2023</div>
             <div class="role-title">Data Analyst (Part-time)</div>
-            <div class="company">Foodland | Jan 2023 – Jun 2023</div>
+            <div class="company">Foodland</div>
             <ul>
                 <li>Analyzed inventory turnover and spoilage rates using SQL, directly influencing reordering logic to reduce waste.</li>
                 <li>Built demand forecasting models to optimize stock levels for perishable goods.</li>
@@ -317,8 +438,9 @@
         </div>
 
         <div class="timeline-item">
+            <div class="date">2013 – 2022</div>
             <div class="role-title">Healthcare Practitioner (Private Practice)</div>
-            <div class="company">Melbourne, VIC | 2013 – 2022</div>
+            <div class="company">Melbourne, VIC</div>
             <ul>
                 <li>Operated in privacy-sensitive environments with strong client communication and ethics mindset, ensuring strict data privacy.</li>
                 <li>Built long-term relationships through structured problem-solving and operational management.</li>
@@ -326,8 +448,9 @@
         </div>
 
         <div class="timeline-item">
+            <div class="date">Jul 2000 – Jan 2013</div>
             <div class="role-title">Clinical Data Analyst / Research Pharmacist</div>
-            <div class="company">LiuZhou TCM Hospital | Jul 2000 – Jan 2013</div>
+            <div class="company">LiuZhou TCM Hospital</div>
             <ul>
                 <li>Led cross-functional teams in collecting, cleaning, and analyzing large-scale clinical datasets.</li>
                 <li>Developed data-driven drug monitoring systems that reduced antibiotic resistance rates by 30%.</li>
@@ -338,17 +461,71 @@
 
     <section id="education">
         <h2>Certifications & Education</h2>
-        <ul class="cert-list">
-            <li><strong>Microsoft Certified:</strong> Azure Data Engineer Associate</li>
-            <li><strong>Databricks Certified:</strong> Data Engineer Professional</li>
-            <li><strong>Databricks Certified:</strong> Data Engineer Associate</li>
-            <li><strong>Google Cloud Certified:</strong> Generative AI Leader</li>
-            <li><strong>Databricks Certified:</strong> Generative AI Engineer</li>
-            <li><strong>AWS Certified:</strong> Cloud Practitioner</li>
-            <li><strong>Data Engineering Nanodegree</strong>, RMIT · Udacity <span class="cert-year">(2023)</span></li>
-            <li><strong>Graduate Certificate in Data Science</strong>, The University of Adelaide College <span class="cert-year">(2022)</span></li>
-            <li><strong>Bachelor of Pharmacy</strong>, Guangxi University of Chinese Medicine <span class="cert-year">(2000)</span></li>
-        </ul>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <i class="fas fa-certificate cert-icon databricks"></i>
+                <div class="cert-info">
+                    <h4>Databricks Certified</h4>
+                    <p>Data Engineer Professional</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-certificate cert-icon databricks"></i>
+                <div class="cert-info">
+                    <h4>Databricks Certified</h4>
+                    <p>Data Engineer Associate</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-certificate cert-icon azure"></i>
+                <div class="cert-info">
+                    <h4>Microsoft Certified</h4>
+                    <p>Azure Data Engineer Associate</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-brain cert-icon ai"></i>
+                <div class="cert-info">
+                    <h4>Google Cloud Certified</h4>
+                    <p>Generative AI Leader</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-robot cert-icon ai"></i>
+                <div class="cert-info">
+                    <h4>Databricks Certified</h4>
+                    <p>Generative AI Engineer</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fab fa-aws cert-icon aws"></i>
+                <div class="cert-info">
+                    <h4>AWS Certified</h4>
+                    <p>Cloud Practitioner</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-graduation-cap cert-icon edu"></i>
+                <div class="cert-info">
+                    <h4>Data Engineering Nanodegree</h4>
+                    <p>RMIT · Udacity <span class="cert-year">2023</span></p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-university cert-icon edu"></i>
+                <div class="cert-info">
+                    <h4>Graduate Certificate in Data Science</h4>
+                    <p>The University of Adelaide College <span class="cert-year">2022</span></p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-user-md cert-icon edu"></i>
+                <div class="cert-info">
+                    <h4>Bachelor of Pharmacy</h4>
+                    <p>Guangxi University of Chinese Medicine <span class="cert-year">2000</span></p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
