@@ -135,6 +135,13 @@
         .project-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; }
         .project-header h3 { font-size: 1.4rem; color: var(--dark); }
         .tech-stack-badges { margin-bottom: 1.5rem; display: flex; gap: 6px; flex-wrap: wrap; }
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: flex-end;
+        }
         .project-links a { 
             background: var(--light);
             padding: 8px 15px;
@@ -144,6 +151,11 @@
             transition: background 0.2s;
         }
         .project-links a:hover { background: #e0e0e0; color: var(--primary); }
+        .project-links a.live-app {
+            background: var(--primary);
+            color: white;
+        }
+        .project-links a.live-app:hover { background: #006cbd; color: white; }
         .project-card ul { margin-left: 1.2rem; color: var(--text-grey); }
         .project-card li { margin-bottom: 0.5rem; }
 
@@ -294,7 +306,8 @@
             <div class="project-header">
                 <h3>Victoria Fuel Hybrid App (Fuel Up Plan)</h3>
                 <div class="project-links">
-                    <a href="https://github.com/yinli113/vic_fuel_info" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                    <a href="https://vic-fuel-info.streamlit.app/" target="_blank" rel="noopener noreferrer" class="live-app"><i class="fas fa-external-link-alt"></i> Live app</a>
+                    <a href="https://github.com/yinli113/vic_fuel_info" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
                 </div>
             </div>
             <div class="tech-stack-badges">
