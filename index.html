@@ -273,7 +273,7 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            I am a Senior Azure Data Engineer with over 10 years of experience across engineering, analytics, and regulated healthcare domains. Extensive hands-on delivery building end-to-end Lakehouse architectures on Azure (Databricks, ADF, Synapse, ADLS, Azure SQL). Proven ability to lead platforms from discovery, design, build to deployment within Agile delivery environments. Strong foundation in advanced SQL scripting, Python automation, and CI/CD pipelines. I am passionate about GenAI-enabled delivery and establishing robust data governance, security, and best practices.
+            I am a Senior Data Engineer with hands-on experience delivering Azure, Databricks, and Microsoft Fabric solutions across consulting, analytics, and regulated healthcare environments. I design and build end-to-end lakehouse platforms, from ingestion and modelling to orchestration, governance, CI/CD, and BI-ready data products. My recent work spans HR analytics, construction cost intelligence, transport telemetry, and community-facing open-data applications, combining strong SQL, Python, and PySpark skills with a practical focus on business outcomes, reliability, and stakeholder trust.
         </p>
     </section>
 
@@ -319,26 +319,6 @@
 
         <div class="project-card">
             <div class="project-header">
-                <h3>Victoria Fuel Hybrid App (Fuel Up Plan)</h3>
-                <div class="project-links">
-                    <a href="https://vicfuelinfogit-kqcbbnr9qslyxdbmlivywd.streamlit.app/" target="_blank" rel="noopener noreferrer" class="live-app"><i class="fas fa-external-link-alt"></i> Live app</a>
-                    <a href="https://github.com/yinli113/vic_fuel_info" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
-                </div>
-            </div>
-            <div class="tech-stack-badges">
-                <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
-                <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white">
-                <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
-                <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white">
-            </div>
-            <ul>
-                <li>Lean Streamlit MVP for Victorian drivers: official Servo Saver fuel prices ingested to Postgres, hybrid current-price mart, interactive maps, and a Data Analysis page with ingest-day trends and optional LLM narrative (Gemini / OpenAI).</li>
-                <li>Designed for low-cost hosting (Streamlit Cloud + Supabase or Neon) with scheduled GitHub Actions ingestion—no heavy streaming infrastructure.</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <div class="project-header">
                 <h3>Fabric HR Analytics & SCD2</h3>
                 <div class="project-links">
                     <a href="https://github.com/yinli113/fabric-hr-scd2" target="_blank"><i class="fab fa-github"></i> View Code</a>
@@ -350,8 +330,8 @@
                 <img src="https://img.shields.io/badge/PySpark-E25A1C?style=flat-square&logo=apachespark&logoColor=white">
             </div>
             <ul>
-                <li>Transformed raw, daily HR snapshots into an enterprise Data Model and history table with Medallion Architecture and Slowly Changing Dimensions (SCD2).</li>
-                <li>Implemented advanced PySpark window functions to detect row-level changes automatically and deterministic PII masking for governance.</li>
+                <li>Built a Microsoft Fabric HR analytics solution that converted daily employee snapshots into a governed medallion model and SCD2 history table for reliable workforce reporting.</li>
+                <li>Implemented PySpark-based change detection and deterministic PII masking, improving historical traceability while supporting privacy and governance requirements.</li>
             </ul>
         </div>
 
@@ -369,9 +349,8 @@
                 <img src="https://img.shields.io/badge/CI/CD-2088FF?style=flat-square&logo=githubactions&logoColor=white">
             </div>
             <ul>
-                <li>Developed a scalable data foundation using Databricks Medallion Architecture to analyze real-time transport telemetry data.</li>
-                <li>Enforced enterprise-grade data governance, access control, and auditing through Databricks Unity Catalog.</li>
-                <li>Automated ETL pipelines and CI/CD deployment across environments.</li>
+                <li>Designed a Databricks lakehouse for transport telemetry using Bronze/Silver/Gold layers, Delta Lake, and Unity Catalog to support scalable analytics and controlled data access.</li>
+                <li>Automated pipelines and deployment workflows across environments, strengthening reliability, governance, and repeatability for ongoing platform delivery.</li>
             </ul>
         </div>
 
@@ -389,8 +368,61 @@
                 <img src="https://img.shields.io/badge/Azure_DevOps-0080C1?style=flat-square&logo=azuredevops&logoColor=white">
             </div>
             <ul>
-                <li>Built a Medallion Architecture (Bronze/Silver/Gold) on Databricks leveraging notebooks and Spark to process Victoria traffic data.</li>
-                <li>Implemented CI/CD workflows for job orchestration and quality checks, ensuring data governance and best practices.</li>
+                <li>Built a Databricks and dbt lakehouse for Victorian road safety data, structuring raw inputs into curated analytical layers for downstream reporting.</li>
+                <li>Implemented CI/CD and data quality practices through Azure DevOps to improve release consistency and support governed analytics delivery.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Azure Data Factory Pipeline (NYC Taxi)</h3>
+                <div class="project-links">
+                    <a href="https://github.com/yinli113/azure_data_factory_NYC_taxi" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                </div>
+            </div>
+            <div class="tech-stack-badges">
+                <img src="https://img.shields.io/badge/Azure_Data_Factory-0089D6?style=flat-square&logo=microsoftazure&logoColor=white">
+                <img src="https://img.shields.io/badge/Azure_SQL-00BCF2?style=flat-square&logo=microsoftazure&logoColor=white">
+            </div>
+            <ul>
+                <li>Built metadata-driven Azure Data Factory pipelines with triggers, foreach, and integration runtime patterns to move and standardise source data at scale.</li>
+                <li>Modelled curated outputs in Azure SQL using robust SQL scripting to support downstream reporting and Power BI consumption.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Azure Synapse Serverless ELT</h3>
+                <div class="project-links">
+                    <a href="https://github.com/yinli113/azure_synapse_taxi_project" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                </div>
+            </div>
+            <div class="tech-stack-badges">
+                <img src="https://img.shields.io/badge/Azure_Synapse-0089D6?style=flat-square&logo=microsoftazure&logoColor=white">
+                <img src="https://img.shields.io/badge/Serverless_SQL-00BCF2?style=flat-square&logo=microsoftazure&logoColor=white">
+            </div>
+            <ul>
+                <li>Built an Azure Synapse serverless ELT pattern over data lake files, applying partitioning and file-format practices to improve query performance and cost efficiency.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Victoria Fuel Hybrid App (Fuel Up Plan)</h3>
+                <div class="project-links">
+                    <a href="https://vicfuelinfogit-kqcbbnr9qslyxdbmlivywd.streamlit.app/" target="_blank" rel="noopener noreferrer" class="live-app"><i class="fas fa-external-link-alt"></i> Live app</a>
+                    <a href="https://github.com/yinli113/vic_fuel_info" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+                </div>
+            </div>
+            <div class="tech-stack-badges">
+                <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
+                <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
+                <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white">
+            </div>
+            <ul>
+                <li>Built an end-to-end open-data application for Victorian drivers, ingesting official Servo Saver fuel prices into Postgres and delivering map-based trip planning, suburb-level comparisons, and trend analysis through Streamlit.</li>
+                <li>Designed a cost-efficient data product architecture using scheduled GitHub Actions ingestion, a hybrid current-price model, and explicit UX guidance on source latency so the app stays useful without overstating data freshness.</li>
             </ul>
         </div>
 
@@ -408,44 +440,11 @@
                 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
             </div>
             <ul>
-                <li>Containerised Kafka broker and built Python producer/consumer pipelines for data processing and automation.</li>
-                <li>Implemented Databricks Delta streaming tables and job orchestration for near-real-time analytics dashboards.</li>
+                <li>Engineered a containerised Kafka pipeline with Python producer and consumer services to simulate streaming ingestion and operational analytics workflows.</li>
+                <li>Integrated Databricks Delta streaming and job orchestration to demonstrate near-real-time processing patterns for dashboard-ready data.</li>
             </ul>
         </div>
 
-        <div class="project-card">
-            <div class="project-header">
-                <h3>Azure Data Factory Pipeline (NYC Taxi)</h3>
-                <div class="project-links">
-                    <a href="https://github.com/yinli113/azure_data_factory_NYC_taxi" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                </div>
-            </div>
-            <div class="tech-stack-badges">
-                <img src="https://img.shields.io/badge/Azure_Data_Factory-0089D6?style=flat-square&logo=microsoftazure&logoColor=white">
-                <img src="https://img.shields.io/badge/Azure_SQL-00BCF2?style=flat-square&logo=microsoftazure&logoColor=white">
-            </div>
-            <ul>
-                <li>Built Azure Data Factory pipelines, triggers, and integration runtimes using metadata, foreach, and copy patterns.</li>
-                <li>Loaded curated data into Azure SQL utilizing strong SQL scripting for downstream Power BI dataset optimisation.</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <div class="project-header">
-                <h3>Azure Synapse Serverless ELT</h3>
-                <div class="project-links">
-                    <a href="https://github.com/yinli113/azure_synapse_taxi_project" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                </div>
-            </div>
-            <div class="tech-stack-badges">
-                <img src="https://img.shields.io/badge/Azure_Synapse-0089D6?style=flat-square&logo=microsoftazure&logoColor=white">
-                <img src="https://img.shields.io/badge/Serverless_SQL-00BCF2?style=flat-square&logo=microsoftazure&logoColor=white">
-            </div>
-            <ul>
-                <li>Implemented serverless SQL pool modelling, partitioning, and format practices for query performance optimisation.</li>
-            </ul>
-        </div>
-        
         <div class="project-card">
             <div class="project-header">
                 <h3>AI Healthcare Assistant</h3>
@@ -459,7 +458,7 @@
                 <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
             </div>
             <ul>
-                <li>Built a modular prompt workflow using Google Gemini API to translate natural language symptoms into structured triage output.</li>
+                <li>Designed a modular prompt workflow using Google Gemini API to translate natural-language symptom inputs into structured triage output for a healthcare-style use case.</li>
             </ul>
         </div>
     </section>
@@ -472,24 +471,21 @@
             <div class="role-title">Data Engineer Consultant</div>
             <div class="company">Private SME Client</div>
             <ul>
-                <li>Designed and delivered an HR analytics solution for a private SME client (~100 employees) to improve workforce tracking, reporting efficiency, and operational visibility.</li>
-                <li>Re-engineered inefficient daily snapshot storage into a Slowly Changing Dimension Type 2 (SCD2) model, reducing data volume by over 60% and lowering storage costs.</li>
-                <li>Built a scalable Medallion Architecture (Bronze &rarr; Silver &rarr; Gold) pipeline in Databricks using PySpark for ingestion, cleansing, and transformation.</li>
-                <li>Applied window functions (lag/lead) to track frequent employee changes (role, department, location), enabling accurate historical analysis.</li>
-                <li>Implemented deterministic PII masking and anonymization techniques to protect sensitive employee data and ensure compliance.</li>
-                <li>Delivered a Power BI-ready data model, significantly improving searchability and management of workforce data for business users.</li>
+                <li>Delivered an HR analytics platform for a private SME client, improving workforce reporting, operational visibility, and self-service access to employee data.</li>
+                <li>Redesigned daily snapshot storage into an SCD2 model, reducing data volume by more than 60% and lowering storage costs while preserving historical accuracy.</li>
+                <li>Built a Databricks medallion pipeline in PySpark for ingestion, cleansing, and transformation, using window functions to track role, department, and location changes over time.</li>
+                <li>Implemented deterministic PII masking and delivered a Power BI-ready data model, strengthening compliance and making workforce insights easier for business users to consume.</li>
             </ul>
         </div>
 
         <div class="timeline-item">
             <div class="date">2024 – Present</div>
-            <div class="role-title">Independent project — Victoria Fuel Info (Fuel Up Plan)</div>
+            <div class="role-title">Independent Builder — Victoria Fuel Info (Fuel Up Plan)</div>
             <div class="company">Side project · Open data &amp; community MVP · Melbourne, VIC</div>
             <ul>
-                <li>Defined MVP scope and user journeys for drivers (plan a stop on a map, interpret state-wide trends, optional AI narrative) while keeping official Servo Saver data attribution and delay expectations explicit in the UI.</li>
-                <li>Translated messy real-world constraints into product behaviour: hybrid “current price” logic, ingest-day–based analytics (not misleading API timestamps), and cost-aware hosting (Postgres + Streamlit Cloud + scheduled GitHub Actions ingestion).</li>
-                <li>Designed analysis features for non-specialists—brand comparisons, seven-day dynamics, distance-from-CBD bands—so headline metrics stay interpretable without exposing row-level detail in LLM prompts.</li>
-                <li>Owned delivery end to end: schema and views, CI/CD-style ingestion, deployment secrets, and in-app copy that explains what each chart represents—reducing misinterpretation of delayed open data.</li>
+                <li>Defined the MVP and built a community-focused open-data product for Victorian drivers, combining map-based trip planning, pricing analytics, and optional AI-generated commentary.</li>
+                <li>Translated messy source-system constraints into trustworthy product behaviour, including hybrid current-price logic, ingest-day analytics, and explicit UX guidance on data latency and attribution.</li>
+                <li>Owned end-to-end delivery across schema design, ingestion workflows, deployment, secrets management, and user-facing analytics copy.</li>
             </ul>
         </div>
         
@@ -498,24 +494,21 @@
             <div class="role-title">Independent Data Engineer & Consultant</div>
             <div class="company">Melbourne, VIC</div>
             <ul>
-                <li>Delivered orchestration patterns using Azure Data Factory to ingest from SQL Server and on-prem sources into ADLS Gen2.</li>
-                <li>Built Lakehouse layers (Bronze/Silver/Gold) using Azure Databricks (Spark, Delta Lake); handled job orchestration and Python data processing.</li>
-                <li>Applied strong SQL scripting to optimise data models across Azure SQL databases.</li>
-                <li>Implemented data governance and security best practices, automating deploy/test workflows via Azure DevOps and GitHub Actions.</li>
+                <li>Delivered Azure-based ingestion and orchestration patterns from SQL Server and on-prem sources into ADLS Gen2 using Azure Data Factory.</li>
+                <li>Built Bronze/Silver/Gold lakehouse layers in Databricks with Spark, Delta Lake, Python, and job orchestration to support scalable downstream analytics.</li>
+                <li>Optimised Azure SQL data models and implemented governance, CI/CD, and release practices through Azure DevOps and GitHub Actions.</li>
             </ul>
         </div>
 
         <div class="timeline-item">
             <div class="date">Jan 2023 – Present</div>
-            <div class="role-title">Data Analyst / Data Engineer (Freelance)</div>
+            <div class="role-title">Data Engineer / Analytics Consultant (Freelance)</div>
             <div class="company">Melbourne-based commercial construction company</div>
             <ul>
-                <li>Recently supported a Melbourne-based commercial construction company in consolidating more than 25 years of operational data into an Azure Data Lake environment.</li>
-                <li>Designed datasets and analytical models to track material and labour expenditure across projects, enabling historical cost benchmarking and improved project cost visibility.</li>
-                <li>Architected an end-to-end Azure Lakehouse solution (ADF + ADLS + Databricks Bronze/Silver/Gold) transforming legacy Excel-based project data into governed Delta tables, reducing project overruns by 10%.</li>
-                <li>Transformed flat spreadsheet history into a relational system and utilised Databricks Autoloader to ingest disparate data into a unified Delta Lake.</li>
-                <li>Built real-time variance Databricks SQL dashboards comparing site spending against benchmarks with automated alerts.</li>
-                <li>Trained Python-based predictive ML models in Databricks to forecast material price fluctuations for data-backed bidding.</li>
+                <li>Led consolidation of more than 25 years of operational data into an Azure-based lakehouse platform for historical analysis and project cost visibility.</li>
+                <li>Designed analytical models for material and labour spend, enabling benchmarking across projects and improving commercial reporting.</li>
+                <li>Architected an end-to-end ADF + ADLS + Databricks solution that transformed spreadsheet-based processes into governed Delta tables and helped reduce project overruns by 10%.</li>
+                <li>Used Databricks Autoloader, SQL dashboards, and Python forecasting models to improve ingestion reliability, variance monitoring, and bidding decisions.</li>
             </ul>
         </div>
 
@@ -524,8 +517,8 @@
             <div class="role-title">Data Engineer (Contract)</div>
             <div class="company">Oeson Learning (Remote)</div>
             <ul>
-                <li>Optimized Databricks Spark jobs for high-volume datasets, achieving a 30% reduction in processing time.</li>
-                <li>Implemented robust schema validation and data governance best practices using Great Expectations within Databricks notebooks.</li>
+                <li>Optimized Databricks Spark jobs on high-volume datasets, reducing processing time by 30%.</li>
+                <li>Implemented schema validation and data quality controls with Great Expectations to strengthen governance in notebook-driven pipelines.</li>
             </ul>
         </div>
 
@@ -534,8 +527,8 @@
             <div class="role-title">Data Analyst (Contract)</div>
             <div class="company">Ededge Groups™ (Remote)</div>
             <ul>
-                <li>Automated SQL execution workflows and Python automation scripts, reducing manual reporting overhead by 25%.</li>
-                <li>Designed interactive dashboards, applying Power BI data modelling and DAX basics to provide executive stakeholder insights.</li>
+                <li>Automated SQL and Python reporting workflows, reducing manual effort by 25%.</li>
+                <li>Developed Power BI dashboards and data models to provide clearer executive reporting and faster insight delivery.</li>
             </ul>
         </div>
 
@@ -554,8 +547,8 @@
             <div class="role-title">Healthcare Practitioner (Private Practice)</div>
             <div class="company">Melbourne, VIC</div>
             <ul>
-                <li>Operated in privacy-sensitive environments with strong client communication and ethics mindset, ensuring strict data privacy.</li>
-                <li>Built long-term relationships through structured problem-solving and operational management.</li>
+                <li>Worked in privacy-sensitive environments with strong stakeholder communication, disciplined documentation, and a high standard of trust and ethics.</li>
+                <li>Built long-term client relationships through structured problem-solving, operational management, and consistent service delivery.</li>
             </ul>
         </div>
 
@@ -564,9 +557,9 @@
             <div class="role-title">Clinical Data Analyst / Research Pharmacist</div>
             <div class="company">LiuZhou TCM Hospital</div>
             <ul>
-                <li>Led cross-functional teams in collecting, cleaning, and analyzing large-scale clinical datasets.</li>
-                <li>Developed data-driven drug monitoring systems that reduced antibiotic resistance rates by 30%.</li>
-                <li>Conducted rigorous statistical modeling for 10+ peer-reviewed publications.</li>
+                <li>Led the collection, cleansing, and analysis of large clinical datasets in a regulated hospital environment.</li>
+                <li>Developed data-driven monitoring systems that reduced antibiotic resistance rates by 30%.</li>
+                <li>Conducted statistical analysis that contributed to 10+ peer-reviewed publications.</li>
             </ul>
         </div>
     </section>
